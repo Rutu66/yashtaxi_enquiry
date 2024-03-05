@@ -106,9 +106,7 @@
               <form action="{% url 'sendmail_booking' %}" method="post">
                 {% csrf_token %}
 
-                <input type="text" placeholder="Your Name" name="name" required {% comment %}
-                  pattern="[A-Za-z\s]+]{2,50}" {% endcomment %}
-                  title="Please enter a valid characters, only letters, spaces)" />
+                <input type="text" placeholder="Your Name" name="name" required title="Please enter a valid characters" />
 
                 <label for="cars" style="color: white"><b>&nbsp; Choose a car: &nbsp; &nbsp; </b></label>
                 <select name="cars" required>
