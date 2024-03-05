@@ -21,17 +21,24 @@ def sendmail_booking(request):
         pickup = request.POST['pickup']
         drop = request.POST['drop']
         mobail = request.POST['mobail']
-        
+
+    
     full_message = f"""
-        Received message below from {name}
         
-        .....................................
-        
-        car type : {cartype}
-        pickup : {pickup}
-        drop : {drop}
-        mobail no : {mobail}
+     
+        Name : {name}
+
+        Car Type : {cartype}
+
+        From : {pickup}
+
+        To : {drop}
+
+        Mobile No  : {mobail}
+
+
     """
+
     send_mail(
         "Receve booking details from yashtaxi",
         full_message,

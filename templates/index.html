@@ -95,9 +95,9 @@
                 </div>
               </div>
 
-              <div class="btn-box">
+              {% comment %} <div class="btn-box">
                 <a href="" class="btn-1"> Read More </a>
-              </div>
+              </div> {% endcomment %}
             </div>
           </div>
           <div class="col-lg-4 col-md-5">
@@ -106,18 +106,18 @@
               <form action="{% url 'sendmail_booking' %}" method="post">
                 {% csrf_token %}
 
-                <input type="text" placeholder="Your Name" name="name" required title="Please enter a valid characters" />
+                <input type="text" placeholder="Your Name" name="name" pattern="[a-zA-Z\s]+" required title="Please enter a valid characters" />
 
                 <label for="cars" style="color: white"><b>&nbsp; Choose a car: &nbsp; &nbsp; </b></label>
                 <select name="cars" required>
                   <option value="">None</option>
                   <option value="volvo">Volvo</option>
-                  <option value="saab">Saab</option>
+                  <option value="saab">Saab</option>  
                   <option value="fiat">Fiat</option>
                   <option value="audi">Audi</option>
                 </select>
-                <input type="text" placeholder="Pick Up Location" name="pickup" required />
-                <input type="text" placeholder="Drop Location" name="drop" required />
+                <input type="text" placeholder="From" name="pickup" required />
+                <input type="text" placeholder="To" name="drop" required />
                 <div class="btm_input">
                   <input type="text" placeholder="Your Phone Number" name="mobail" required pattern="[0-9]{10}"
                     title="Please enter a 10-digit mobile number" />
@@ -360,7 +360,7 @@
             <h4>Get In touch</h4>
             <form action="{% url 'sendmail_contact' %}" method="post">
               {% csrf_token %}
-              <input type="text" placeholder="Name" name="name" required pattern="[A-Za-z]"
+              <input type="text" placeholder="Name" name="name" required pattern="[a-zA-Z\s]+"
                 title="Please enter a valid characters, only letters and spaces" />
               <input type="text" placeholder="Phone Number" name="mobail" required pattern="[0-9]{10}"
                 title="Please enter a 10-digit mobile number" />
@@ -485,7 +485,7 @@
   <section class="info_section layout_padding-top layout_padding2-bottom">
     <div class="container">
       <div class="box">
-        <div class="info_form">
+        {% comment %} <div class="info_form">
           <h4>Subscribe Our Newsletter</h4>
           <form action="">
             <input type="text" placeholder="Enter your email" />
@@ -493,7 +493,7 @@
               <button></button>
             </div>
           </form>
-        </div>
+        </div> {% endcomment %}
         <div class="info_links">
           <ul>
             <li class=" ">
@@ -548,8 +548,7 @@
   <section class="container-fluid footer_section">
     <div class="container">
       <p>
-        &copy; 2021 All Rights Reserved By
-        <a href="https://html.design/">Free Html Templates</a>
+        &copy; 2024 All Rights Reserved By Rk design
       </p>
     </div>
   </section>

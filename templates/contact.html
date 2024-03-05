@@ -22,7 +22,7 @@
           </h4>
           <form action="{% url 'sendmail_contact' %}" method="post">
             {% csrf_token %}
-            <input type="text" placeholder="Name" name="name" required {% comment %} pattern="[A-Za-z]" {% endcomment %}
+            <input type="text" placeholder="Name" name="name" required pattern="[a-zA-Z\s]+"
               title="Please enter a valid characters, only letters and spaces)" />
             <input type="text" placeholder="Phone Number" name="mobail" required pattern="[0-9]{10}"
               title="Please enter a 10-digit mobile number" />
@@ -49,72 +49,6 @@
 </section>
 <!-- end contact section -->
 
-<!-- info section -->
-
-<section class="info_section layout_padding-top layout_padding2-bottom">
-  <div class="container">
-    <div class="box">
-      <div class="info_form">
-        <h4>
-          Subscribe Our Newsletter
-        </h4>
-        <form action="">
-          <input type="text" placeholder="Enter your email">
-          <div class="d-flex justify-content-end">
-            <button>
-
-            </button>
-          </div>
-        </form>
-      </div>
-      <div class="info_links">
-        <ul>
-          <li class=" ">
-            <a class="" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="">
-            <a class="" href="{% url 'about' %}"> About</a>
-          </li>
-          <li class="">
-            <a class="" href="{% url 'service' %}"> Services </a>
-          </li>
-
-          <li class="">
-            <a class="" href="{% url 'contact' %}">Contact Us</a>
-          </li>
-          {% comment %} <li class="">
-            <a class="" href="#">Login</a>
-          </li> {% endcomment %}
-        </ul>
-      </div>
-      <div class="info_social">
-        <div>
-          <a href="">
-            <img src="{% static 'images/fb.png' %}" alt="">
-          </a>
-        </div>
-        <div>
-          <a href="">
-            <img src="{% static 'images/twitter.png' %}" alt="">
-          </a>
-        </div>
-        <div>
-          <a href="">
-            <img src="{% static 'images/linkedin.png' %}" alt="">
-          </a>
-        </div>
-        <div>
-          <a href="">
-            <img src="{% static 'images/instagram.png' %}" alt="">
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-</section>
-
-<!-- end info section -->
 
 
 
